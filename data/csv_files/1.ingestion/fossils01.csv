@@ -1,0 +1,25 @@
+﻿Name,Buy,Sell,Color 1,Color 2,Size,Source,Museum,Version,Interact,Catalog,Filename,Internal ID,Unique Entry ID
+ankylo tail,NFS,2500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilAnkylosaurusC,171,wLWBm2R727RC3qSL2
+stego skull,NFS,5000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilStegosaurusA,226,DqsxWDoY5Mue6eQxg
+dimetrodon skull,NFS,5500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilDimetrodonA,184,sEuSt7ycajTAqSzKg
+acanthostega,NFS,2000,Beige,Brown,1x1,Assessing fossils,Room 1,1.0.0,No,Not for sale,FtrFossilFirstFourLegs,4664,LQkRP3kBn3T2jBboF
+eusthenopteron,NFS,2000,Brown,Brown,1x1,Assessing fossils,Room 1,1.0.0,No,Not for sale,FtrFossilFirstAmphibian,4663,BHhdGwq7YeZuHmkEW
+trilobite,NFS,1300,Beige,Brown,1x1,Assessing fossils,Room 1,1.0.0,No,Not for sale,FtrFossilTrilobite,303,qFoqCvDTBd2oyC5Gz
+australopith,NFS,1100,Beige,Brown,1x1,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilAustralopithecus,301,vE5WQNHepjDb36K6g
+left ptera wing,NFS,4500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilPteranodonC,208,GJtNP9DjAFjGQdMPN
+brachio pelvis,NFS,5000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilBrachiosaurusC,4690,5zCdNszyap3Gs7hZY
+right ptera wing,NFS,4500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilPteranodonB,207,z45jBDDaRufwQkiEf
+stego torso,NFS,4500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilStegosaurusB,227,Lv7ChzGsofd3qEjDL
+iguanodon torso,NFS,3500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilIguanodonB,189,dJRCXccvviu6chWyK
+archelon tail,NFS,3500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilArchelonB,178,CtosFxKjG5nzLGi4t
+pachy tail,NFS,3500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilPachycephalosaurusB,199,assKMf95bhB6pe3PM
+ankylo torso,NFS,3000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilAnkylosaurusB,170,5QNzf5buPckabN6cR
+diplo neck,NFS,4500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilDiplodocusB,217,odxoEbLSduTmarKkm
+sabertooth skull,NFS,2500,Brown,Brown,2x2,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilSmilodonA,213,4xkrLpphWXubgtRPw
+plesio skull,NFS,4000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilElasmosaurusA,234,ioAEHvPecRoCBLJsK
+left megalo side,NFS,4000,Beige,Brown,2x2,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilMegalocerosB,4659,7YzSLZWsjXQNp5xRY
+megacero tail,NFS,3000,Brown,Brown,2x2,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilBrontotheriumC,182,NQcfdw5y6fokTPNGs
+tricera tail,NFS,4500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilTriceratopsC,244,TXbdqeAkhjtqBJAWC
+deinony tail,NFS,2500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilDeinonychusB,211,e3NuAF5y9iv7J52Sv
+left quetzal wing,NFS,5000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilQuetzalcoatlusC,4699,rS4iizyMDxN4yizLT
+pachy skull,NFS,4000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,Yes,Not for sale,FtrFossilPachycephalosaurusA,198,tgNyyjMaE9GbzMJzQ
