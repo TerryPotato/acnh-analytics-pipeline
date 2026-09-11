@@ -160,7 +160,9 @@ BEGIN
         source_file
     FROM raw.fish
     WHERE unique_entry_id IS NOT NULL
-    ORDER BY unique_entry_id, loaded_at DESC;
+    -- Prefer a batch where Sell survived intact over a dirtier later batch
+    -- that blanked it out; among equally complete batches, keep the latest.
+    ORDER BY unique_entry_id, (NULLIF(TRIM(sell), '') IS NULL), loaded_at DESC;
 END;
 $$;
 
@@ -298,7 +300,9 @@ BEGIN
         source_file
     FROM raw.insects
     WHERE unique_entry_id IS NOT NULL
-    ORDER BY unique_entry_id, loaded_at DESC;
+    -- Prefer a batch where Sell survived intact over a dirtier later batch
+    -- that blanked it out; among equally complete batches, keep the latest.
+    ORDER BY unique_entry_id, (NULLIF(TRIM(sell), '') IS NULL), loaded_at DESC;
 END;
 $$;
 
@@ -368,7 +372,13 @@ BEGIN
         source_file
     FROM raw.fossils
     WHERE unique_entry_id IS NOT NULL
-    ORDER BY unique_entry_id, loaded_at DESC;
+    -- Prefer a batch where Sell (and a real Buy, when not genuinely NFS)
+    -- survived intact over a dirtier later batch that blanked it out;
+    -- among equally complete batches, keep the latest.
+    ORDER BY unique_entry_id,
+             (NULLIF(TRIM(sell), '') IS NULL),
+             (NULLIF(NULLIF(TRIM(buy), ''), 'NFS') IS NULL),
+             loaded_at DESC;
 END;
 $$;
 
@@ -663,7 +673,13 @@ BEGIN
         source_file
     FROM raw.recipes
     WHERE unique_entry_id IS NOT NULL
-    ORDER BY unique_entry_id, loaded_at DESC;
+    -- Prefer a batch where Sell (and a real Buy, when not genuinely NFS)
+    -- survived intact over a dirtier later batch that blanked it out;
+    -- among equally complete batches, keep the latest.
+    ORDER BY unique_entry_id,
+             (NULLIF(TRIM(sell), '') IS NULL),
+             (NULLIF(NULLIF(TRIM(buy), ''), 'NFS') IS NULL),
+             loaded_at DESC;
 END;
 $$;
 
