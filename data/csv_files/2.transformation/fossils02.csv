@@ -30,9 +30,9 @@ ophthalmo skull,,,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale
 iguanodon tail,NFS,3000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilIguanodonC,190,GL2CuJXa4gYb4E4cE
   parasaur tail  ,NFS,2500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilParasaurolophusC,204,fEFd7AbLQpNwkzC8a
   plesio body  ,NFS,4500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilElasmosaurusB,235,jbfiPhmAcserk23rm
-dimetrodon torso,NFS,,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilDimetrodonB,185,LcbJqY3JzLcQRoPGT
+dimetrodon torso,NFS,5000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilDimetrodonB,185,LcbJqY3JzLcQRoPGT
 shark-tooth pattern,NFS,1000,Beige,Brown,1x1,Assessing fossils,Room 1,1.0.0,No,Not for sale,FtrFossilShark,302,yKE5xwKL9EeCJdN4D
-  diplo tail  ,,,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilDiplodocusE,220,iKsrdn2aAxSfe83qZ
+  diplo tail  ,NFS,,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilDiplodocusE,220,iKsrdn2aAxSfe83qZ
   megacero torso  ,NFS,3500,Brown,Brown,2x2,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilBrontotheriumB,181,NcbHKXp9gq6Y96Wtw
   BRACHIO SKULL  ,,6000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilBrachiosaurusA,4688,bECfoiR8RoGTXmqCL
 quetzal torso,,4500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilQuetzalcoatlusA,4697,SoS8Q55cyTsEyqeZi
@@ -41,8 +41,8 @@ quetzal torso,,4500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sa
 megacero skull,NFS,4500,Brown,Brown,2x2,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilBrontotheriumA,180,8CF9fvWstP6cWRbRD
   archelon skull  ,NFS,4000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilArchelonA,177,cYZhXfyNiqZy2hgeM
 sabertooth tail,NFS,2000,Brown,Brown,2x2,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilSmilodonB,214,iXfTo3dxakDrLZxnv
-anomalocaris,NFS,,Black,Gray,1x1,Assessing fossils,Room 1,1.0.0,No,Not for sale,FtrFossilAnomalocaris,4651,TYX964LM2tNZ3SYKC
-  mammoth skull  ,,,Beige,Brown,2x2,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilMammothA,195,96CTubnHfYqmHyd3s
+anomalocaris,NFS,2000,Black,Gray,1x1,Assessing fossils,Room 1,1.0.0,No,Not for sale,FtrFossilAnomalocaris,4651,TYX964LM2tNZ3SYKC
+  mammoth skull  ,,3000,Beige,Brown,2x2,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilMammothA,195,96CTubnHfYqmHyd3s
 T. rex tail,NFS,5000,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilTRexC,240,AfeJAEkmJCdgtMrWj
   RIGHT MEGALO SIDE  ,NFS,5500,Beige,Brown,2x2,Assessing fossils,Room 3,1.0.0,No,Not for sale,FtrFossilMegalocerosA,4658,6qFWqu3vKF9SuPjRE
   parasaur skull  ,NFS,3500,Brown,Brown,2x2,Assessing fossils,Room 2,1.0.0,No,Not for sale,FtrFossilParasaurolophusA,202,6xAZRPKhHNNQLofoE

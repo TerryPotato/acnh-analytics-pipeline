@@ -402,7 +402,7 @@ def load_top_creatures(hemisphere: str, month: int, top_n: int = 10) -> pd.DataF
 @st.cache_data
 def load_monthly_bell_potential(hemisphere: str) -> pd.DataFrame:
     query = """
-        SELECT month, creature_type, species_count, total_bells
+        SELECT month, creature_type, species_count, total_bells, unpriced_count
         FROM analytics.v_monthly_bell_potential
         WHERE hemisphere = %(hemisphere)s
         ORDER BY month, creature_type
@@ -561,6 +561,7 @@ leaving_df = load_leaving_next_month(hemisphere, month)
 
 total_species = int(month_df["species_count"].sum()) if not month_df.empty else 0
 total_bells_month = month_df["total_bells"].sum() if not month_df.empty else 0
+unpriced_species = int(month_df["unpriced_count"].sum()) if not month_df.empty else 0
 top_creature_name = top_creatures_df.iloc[0]["name"] if not top_creatures_df.empty else "—"
 top_creature_sell = top_creatures_df.iloc[0]["sell"] if not top_creatures_df.empty else None
 top_creature_icon = top_creatures_df.iloc[0]["icon_url"] if not top_creatures_df.empty else None
@@ -580,6 +581,12 @@ with kpi_cols[2]:
 with kpi_cols[3]:
     st.markdown(stat_tile(ICONS["map"], "Leaving next month", f"{len(leaving_df)}"), unsafe_allow_html=True)
 
+unpriced_note = (
+    f" <b>{unpriced_species} species</b> have no price in the data yet and are not included in the total."
+    if unpriced_species
+    else ""
+)
+
 st.write("")
 st.markdown(
     f"""
@@ -587,7 +594,7 @@ st.markdown(
         <img src="{ICONS['bells']}">
         <div><b>Potential Bells</b> = sum of one unit of each available species this month.
         It's a ceiling, not a forecast — real earnings depend on spawn rates, luck, and how
-        many of each critter you actually catch.</div>
+        many of each critter you actually catch.{unpriced_note}</div>
     </div>
     """,
     unsafe_allow_html=True,

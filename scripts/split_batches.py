@@ -24,6 +24,9 @@ data) is what gives sql/04's DISTINCT ON (unique_entry_id) ORDER BY
 loaded_at DESC deduplication something real to demonstrate: raw accumulates
 every batch, and harmonized always keeps the latest, cleaned version.
 
+Prices are blanked at random, but every item keeps its real price in at least
+one batch (see ensure_price_survives), so dedup can always recover it.
+
 Run from the project root:
 
     python scripts\\split_batches.py
@@ -115,6 +118,46 @@ def duplicate_some_rows(df: pd.DataFrame, rng: random.Random, frac: float = 0.1)
     return pd.concat([df, dupes], ignore_index=True)
 
 
+def ensure_price_survives(batches: list[pd.DataFrame], source: pd.DataFrame, table: str) -> None:
+    """
+    Guarantee every item keeps its original price in at least one batch.
+
+    make_dirty blanks prices at random, so an item that only ever appears in
+    dirty batches (e.g. group C, which only ships in batch 3) can lose its
+    price in every version, and no dedup rule can recover it. In a real feed
+    one file may arrive broken, but not every version of the same record.
+
+    For each price column, any Unique Entry ID left blank in all batches gets
+    its source value restored in its first row of the earliest batch it
+    appears in. Every other dirty value is left untouched. This step draws
+    nothing from the RNG, so the rest of the output stays reproducible.
+    """
+    original = source.set_index("Unique Entry ID")
+
+    for col in PRICE_COLUMNS.get(table, []):
+        if col not in source.columns:
+            continue
+
+        survived = set()
+        for batch in batches:
+            has_price = batch[col].fillna("").str.strip().ne("")
+            survived.update(batch.loc[has_price, "Unique Entry ID"])
+
+        restored = 0
+        for batch in batches:
+            ids = batch["Unique Entry ID"]
+            lost = batch[~ids.isin(survived)].drop_duplicates("Unique Entry ID")
+            for idx, entry_id in lost["Unique Entry ID"].items():
+                value = original.at[entry_id, col]
+                if value.strip():
+                    batch.at[idx, col] = value
+                    restored += 1
+                survived.add(entry_id)
+
+        if restored:
+            print(f"  Restored {col} for {restored} item(s) blanked in every batch")
+
+
 def write_batch(df: pd.DataFrame, table: str, batch_number: int, folder: Path) -> None:
     """Write one batch CSV, creating the destination folder if needed."""
     folder.mkdir(parents=True, exist_ok=True)
@@ -150,6 +193,8 @@ def split_table(table: str, rng: random.Random) -> None:
     batch_03 = make_dirty(batch_03, table, rng)
     batch_03 = make_dirty(batch_03, table, rng)  # applied twice: dirtier than batch 2
     batch_03 = duplicate_some_rows(batch_03, rng, frac=0.15)
+
+    ensure_price_survives([batch_01, batch_02, batch_03], df, table)
 
     write_batch(batch_01, table, 1, CSV_FILES_DIR / "1.ingestion")
     write_batch(batch_02, table, 2, CSV_FILES_DIR / "2.transformation")

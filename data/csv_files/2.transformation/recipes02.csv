@@ -218,7 +218,7 @@ TRADITIONAL STRAW COAT,8,clump of weeds,,,,,,,,,,,NFS,200,NA,Normal villagers,,0
   flimsy shovel  ,5,hardwood,,,,,,,,,,,280,200,NA,Blathers; Nook's Cranny,,0,1.0.0,Tools,103,19,bPp3TpiueJDRte9wT
 shell wand,3,summer shell,3,star fragment,,,,,,,,,NFS,200,NA,Balloons,Only available during Summer,0,1.0.0,Tools,2890,534,ZTaYhxtmS2F575QLd
 boomerang,3,hardwood,,,,,,,,,,,NFS,200,NA,Lazy villagers,,50,1.0.0,Wall-mounted,481,171,rMasSCDby69z84Fai
-mossy garden rock,15,stone,15,clump of weeds,,,,,,,,,NFS,,NA,Lazy villagers,,0,1.0.0,Housewares,807,647,Fn45YxZCtsHx5u3t2
+mossy garden rock,15,stone,15,clump of weeds,,,,,,,,,NFS,200,NA,Lazy villagers,,0,1.0.0,Housewares,807,647,Fn45YxZCtsHx5u3t2
 medium cardboard boxes,4,cardboard box,,,,,,,,,,,NFS,200,NA,Lazy villagers,,0,1.0.0,Housewares,2135,610,Q9uBnt9n4okWbCgvg
 SHELL TABLE,7,sand dollar,3,clay,,,,,,,,,,200,NA,Peppy villagers,,0,1.0.0,Housewares,2702,178,RXY6M4BmsWFJNqHAt
   log wall-mounted clock  ,2,hardwood,1,iron nugget,,,,,,,,,NFS,200,NA,Lazy villagers,,50,1.0.0,Wall-mounted,340,115,qAiYovJGN6oxwXWqY
@@ -247,14 +247,14 @@ STAR POCHETTE,6,star fragment,,,,,,,,,,,,200,NA,Celeste,,0,1.0.0,Bags,2281,627,4
   bamboo speaker  ,3,bamboo piece,1,iron nugget,,,,,,,,,NFS,200,NA,Snooty villagers,,50,1.0.0,Housewares,2411,591,59rwk7hPFaeWEX7AY
 CHOCOLATE HERRINGBONE WALL,15,softwood,,,,,,,,,,,,200,NA,Smug villagers,,0,1.0.0,Wallpaper,525,313,TvTxY9NBsDvQfXAJH
 bamboo floor lamp,8,bamboo piece,,,,,,,,,,,NFS,200,NA,Normal villagers,,50,1.0.0,Housewares,2410,159,47AeakgHNdNvSvLRb
-flimsy watering can,5,softwood,,,,,,,,,,,,200,NA,Tom Nook; Nook's Cranny,,0,1.0.0,Tools,109,20,FnnhLbn7KQdg2Xqey
+flimsy watering can,5,softwood,,,,,,,,,,,280,200,NA,Tom Nook; Nook's Cranny,,0,1.0.0,Tools,109,20,FnnhLbn7KQdg2Xqey
   LOG DINING TABLE  ,15,hardwood,,,,,,,,,,,NFS,200,NA,Tom Nook; Cranky villagers,Obtained during the main storyline during the villager house development quest,0,1.0.0,Housewares,333,118,TeyLyttsCPPGxsfgu
 BUNNY DAY FENCE,1,earth egg,1,stone egg,1,leaf egg,1,wood egg,1,sky egg,1,water egg,NFS,200,NA,Egg bottle; Egg balloon,Only available during Bunny Day,0,1.1.0a,Fencing,3790,712,4Kdig9tWPTr4Xx6Kv
   brick fence  ,6,clay,,,,,,,,,,,NFS,200,1000,Nook Miles Exchange,,0,1.0.0,Fencing,790,99,F7bg775Kh6niY7gcZ
   stack of books  ,5,book,,,,,,,,,,,NFS,200,NA,Lazy villagers,,100,1.0.0,Miscellaneous,2100,196,wRs5mmgErDd3guzAD
 golden toilet,6,gold nugget,,,,,,,,,,,NFS,200,NA,Snooty villagers,,200,1.0.0,Housewares,1106,262,LExLS6QXyLuhewyZm
   pretty tulip wreath  ,3,orange tulips,3,pink tulips,3,purple tulips,,,,,,,NFS,200,NA,All Villagers,,100,1.0.0,Wall-mounted,3550,361,z4k9YXZrLp9x6TXXF
-bamboo flooring,15,bamboo piece,,,,,,,,,,,,200,NA,Cranky villagers,,50,1.0.0,Floors,2460,485,JyK3oMGwWg46SZ7M6
+bamboo flooring,15,bamboo piece,,,,,,,,,,,NFS,200,NA,Cranky villagers,,50,1.0.0,Floors,2460,485,JyK3oMGwWg46SZ7M6
 BACKYARD LAWN,30,clump of weeds,,,,,,,,,,,NFS,200,NA,Peppy villagers,,0,1.0.0,Floors,1261,487,pCoJi3w8hqsWKsBvz
 trophy case,24,hardwood,3,gold nugget,6,iron nugget,,,,,,,NFS,,NA,Jock villagers,,100,1.0.0,Housewares,401,576,jtaKPkvSoNZGcDrNt
   IRON CLOSET  ,12,iron nugget,,,,,,,,,,,NFS,200,NA,Big Sister villagers,,0,1.0.0,Housewares,904,573,PamdzQi8BcNbAqHmL
@@ -267,7 +267,7 @@ pot,5,clay,,,,,,,,,,,NFS,200,NA,Tom Nook; Cranky villagers,Obtained during the m
 cherry rug,6,cherry,,,,,,,,,,,NFS,200,NA,Peppy villagers,,100,1.0.0,Rugs,1470,543,pMnYDcm7v9cjAdLj2
   fountain  ,1,drinking fountain,20,stone,8,iron nugget,,,,,,,NFS,200,3000,Nook Miles Exchange,,0,1.0.0,Housewares,804,599,LWAeuHiDEv25pHRQx
 stone-egg shell,2,stone egg,,,,,,,,,,,NFS,200,NA,Collecting stone eggs,Only available during Bunny Day,0,1.1.0a,Headwear,3763,676,bC74Ws22wnGThm6Mh
-old-fashioned washtub,3,softwood,,,,,,,,,,,NFS,,NA,DIY for Beginners,Purchase DIY for Beginners at Nook's Cranny,0,1.0.0,Miscellaneous,464,195,ebzFXSHFr3vGLoDSb
+old-fashioned washtub,3,softwood,,,,,,,,,,,NFS,200,NA,DIY for Beginners,Purchase DIY for Beginners at Nook's Cranny,0,1.0.0,Miscellaneous,464,195,ebzFXSHFr3vGLoDSb
 mush table,2,flat mushroom,6,wood,,,,,,,,,NFS,200,NA,Balloons,Only available during Mushroom Season,0,1.0.0,Housewares,3003,32,cECL9PSx9yNfPWNvW
 APPLE HAT,5,apple,,,,,,,,,,,NFS,200,NA,Big Sister villagers,,100,1.0.0,Headwear,1781,622,5ABmQxkN3SatETcEg
   BEEKEEPER'S HIVE  ,3,wasp nest,5,wood,,,,,,,,,NFS,200,NA,Jock villagers,,0,1.0.0,Housewares,2000,204,nxtm2DdtRcHzAyrZX
@@ -285,7 +285,7 @@ leaf-egg shell,2,leaf egg,,,,,,,,,,,NFS,200,NA,Collecting leaf eggs,Only availab
 golden watering can,1,watering can,1,gold nugget,,,,,,,,,NFS,200,NA,5-star town evaluation,,0,1.0.0,Tools,116,659,HShnyCLB3cPL5xNTx
 BAMBOO LATTICE FENCE,6,bamboo piece,,,,,,,,,,,NFS,200,1000,Nook Miles Exchange,,0,1.0.0,Fencing,2490,101,kFi2XW9eoPkAoWdS5
   ROCKING HORSE  ,5,softwood,,,,,,,,,,,NFS,200,NA,Normal villagers,,0,1.0.0,Housewares,403,102,mYp7N7KfrH4GprNif
-IRON SHELF,14,iron nugget,,,,,,,,,,,,,NA,Big Sister villagers,,0,1.0.0,Housewares,905,128,McdRNpxXrk9xKkK4S
+IRON SHELF,14,iron nugget,,,,,,,,,,,,200,NA,Big Sister villagers,,0,1.0.0,Housewares,905,128,McdRNpxXrk9xKkK4S
 blossom-viewing lantern,6,cherry-blossom petal,4,hardwood,,,,,,,,,NFS,200,NA,Balloons,Only available during Cherry-Blossom Season,0,1.0.0,Housewares,2604,427,7dxFMY3pjTmv4D3QX
 green grass skirt,7,clump of weeds,,,,,,,,,,,NFS,200,NA,Peppy villagers,,0,1.0.0,Bottoms,1287,605,mzQREt22Mh8reP5WY
   bamboo wand  ,6,young spring bamboo,3,star fragment,,,,,,,,,NFS,200,NA,Balloons,Only available during Spring,0,1.0.0,Tools,2590,538,Z5FSewP6wM2McqRCJ
@@ -297,18 +297,18 @@ EARTH-EGG SHOES,2,earth egg,,,,,,,,,,,NFS,,NA,Collecting earth eggs,Only availab
 MUSH LAMP,1,skinny mushroom,5,clay,,,,,,,,,NFS,200,NA,Balloons,Only available during Mushroom Season,0,1.0.0,Housewares,3006,51,vTR3yJt55jtNGdprm
 GALAXY FLOORING,5,star fragment,1,large star fragment,,,,,,,,,NFS,200,NA,Celeste,,0,1.0.0,Floors,2260,482,e3XyJ7j4bQYXSRDBW
 straw fence,10,clump of weeds,3,wood,,,,,,,,,NFS,200,1000,Nook Miles Exchange,,0,1.0.0,Fencing,1290,552,WpBzuYymcgmxSCn2m
-wooden table,15,wood,,,,,,,,,,,NFS,,NA,Big Sister villagers,,0,1.0.0,Housewares,315,201,vXEY4HbrHoAoiQn9s
+wooden table,15,wood,,,,,,,,,,,NFS,200,NA,Big Sister villagers,,0,1.0.0,Housewares,315,201,vXEY4HbrHoAoiQn9s
 tall lantern,18,stone,,,,,,,,,,,NFS,200,NA,Smug villagers,,100,1.0.0,Housewares,818,653,5LkbaD7PpwzSvzERR
 BUNNY DAY FESTIVE BALLOONS,1,stone egg,1,wood egg,1,water egg,,,,,,,NFS,200,NA,Egg bottle; Egg balloon,Only available during Bunny Day,0,1.1.0a,Housewares,3707,704,gSFqr84aRRt85bwzj
 WINDFLOWER CROWN,2,red windflowers,2,orange windflowers,2,white windflowers,,,,,,,,200,NA,All Villagers,,0,1.0.0,Headwear,3600,240,2bHpYXqeSKyRgCsHx
-  flat garden rock  ,20,stone,,,,,,,,,,,NFS,,NA,Snooty villagers,,0,1.0.0,Housewares,806,646,JFxaTW3m9gD8zWTyQ
+  flat garden rock  ,20,stone,,,,,,,,,,,NFS,200,NA,Snooty villagers,,0,1.0.0,Housewares,806,646,JFxaTW3m9gD8zWTyQ
   LUCKY GOLD CAT  ,2,gold nugget,1,lucky cat,,,,,,,,,NFS,200,NA,Snooty villagers,,100,1.0.0,Miscellaneous,1107,578,bKrB5YcmewKR5AWot
-  water-egg shell  ,2,water egg,,,,,,,,,,,,200,NA,Collecting water eggs,Only available during Bunny Day,0,1.1.0a,Headwear,3775,688,YqZedKTDWgjDWcTR4
-  frying pan  ,2,iron nugget,,,,,,,,,,,NFS,,NA,DIY for Beginners,Purchase DIY for Beginners at Nook's Cranny,0,1.0.0,Miscellaneous,908,199,bgMKMNGmxjKPXaDNp
+  water-egg shell  ,2,water egg,,,,,,,,,,,NFS,200,NA,Collecting water eggs,Only available during Bunny Day,0,1.1.0a,Headwear,3775,688,YqZedKTDWgjDWcTR4
+  frying pan  ,2,iron nugget,,,,,,,,,,,NFS,200,NA,DIY for Beginners,Purchase DIY for Beginners at Nook's Cranny,0,1.0.0,Miscellaneous,908,199,bgMKMNGmxjKPXaDNp
   DOCUMENT STACK  ,1,scattered papers,,,,,,,,,,,,,NA,Smug villagers,,100,1.0.0,Miscellaneous,2120,462,rLvnyoEj48NFgsNpX
   orange wall-mounted clock  ,10,orange,2,wood,,,,,,,,,,,NA,Lazy villagers,,100,1.0.0,Wall-mounted,1330,184,rJaAL5N8CQQ5dPd9y
 mini DIY workbench,3,wood,3,hardwood,3,softwood,2,iron nugget,,,,,NFS,200,NA,Test Your DIY Skills,Purchase Test Your DIY Skills from Nook's Cranny.,0,1.0.0,Housewares,301,82,sLGJoXrKyqJ4bdhxb
-  starry garland  ,10,star fragment,,,,,,,,,,,,,NA,Celeste,,0,1.0.0,Wall-mounted,2231,430,9LShEjECc39Sdyxzt
+  starry garland  ,10,star fragment,,,,,,,,,,,,200,NA,Celeste,,0,1.0.0,Wall-mounted,2231,430,9LShEjECc39Sdyxzt
   maple-leaf umbrella  ,7,maple leaf,,,,,,,,,,,NFS,,NA,Balloons,Only available during Maple Leaf Season,0,1.0.0,Umbrellas,2980,541,MWAN27apJPewSFHiR
 cherry-blossom pond stone,10,stone,3,cherry-blossom petal,,,,,,,,,NFS,200,NA,Balloons,Only available during Cherry-Blossom Season,0,1.0.0,Housewares,820,511,5kPZxufBzifksrFoK
 snowperson head,1,large snowflake,5,snowflake,,,,,,,,,NFS,200,NA,Snowboy,Reward for making a perfect Snowboy; Only available during Winter,0,1.0.0,Headwear,3280,637,6TuttvHpXz8cBQAqa
@@ -318,7 +318,7 @@ Taurus bathtub,3,star fragment,2,Taurus fragment,1,gold nugget,8,stone,,,,,NFS,,
   coconut wall planter  ,1,coconut,5,clump of weeds,,,,,,,,,NFS,200,NA,Snooty villagers,,50,1.0.0,Wall-mounted,1830,405,tw8LKPHQrkMZwgAua
   peach chair  ,10,peach,5,wood,,,,,,,,,NFS,200,NA,Normal villagers,,100,1.0.0,Housewares,1500,187,nCJGnLxvqbshrxxxD
 POTTED IVY,5,clump of weeds,5,clay,,,,,,,,,,200,NA,Test Your DIY Skills,Purchase Test Your DIY Skills from Nook's Cranny.,0,1.0.0,Wall-mounted,1231,214,PRZpskqoyoPoT6g3c
-star clock,3,star fragment,1,iron nugget,,,,,,,,,NFS,,NA,Celeste,,0,1.0.0,Miscellaneous,2230,514,2svknEfP5LbMe6Qur
+star clock,3,star fragment,1,iron nugget,,,,,,,,,NFS,200,NA,Celeste,,0,1.0.0,Miscellaneous,2230,514,2svknEfP5LbMe6Qur
 gold-armor shoes,4,gold nugget,,,,,,,,,,,NFS,200,NA,Smug villagers,,200,1.0.0,Shoes,1182,643,4nY6xoTSqFMjzsTLp
 sakura-wood flooring,5,cherry-blossom petal,10,wood,,,,,,,,,,200,NA,Balloons,Only available during Cherry-Blossom Season,0,1.0.0,Floors,2661,649,fPZCc3qyHmip4YE4o
   mushroom wreath  ,10,tree branch,1,round mushroom,1,skinny mushroom,1,flat mushroom,,,,,NFS,200,NA,Balloons,Only available during Mushroom Season,0,1.0.0,Wall-mounted,3040,221,5XfaKLorByDHGp9pi
@@ -335,18 +335,18 @@ BRICK WELL,8,clay,5,wood,1,flimsy shovel,,,,,,,NFS,200,2000,Nook Miles Exchange,
 chic tulip crown,2,purple tulips,2,pink tulips,1,orange tulips,,,,,,,NFS,200,NA,All Villagers,,100,1.0.0,Headwear,3610,244,AWo72X4YM3PnWSL2P
 steel flooring,7,iron nugget,,,,,,,,,,,NFS,200,NA,Smug villagers,,0,1.0.0,Floors,960,489,9ey59kSpvYXFaFzLz
   mush umbrella  ,3,flat mushroom,,,,,,,,,,,NFS,200,NA,Balloons,Only available during Mushroom Season,0,1.0.0,Umbrellas,3080,648,PT3wRG87hdFbt8kgG
-  IRON HANGER STAND  ,3,iron nugget,,,,,,,,,,,,200,NA,Cranky villagers,,0,1.0.0,Housewares,906,365,sFNTL2NeXckRLskP7
+  IRON HANGER STAND  ,3,iron nugget,,,,,,,,,,,NFS,200,NA,Cranky villagers,,0,1.0.0,Housewares,906,365,sFNTL2NeXckRLskP7
   STONE ARCH  ,90,stone,,,,,,,,,,,NFS,200,2000,Nook Miles Exchange,,0,1.0.0,Housewares,809,652,6nZpvNEdHwxMgNtYC
   leaf-egg outfit  ,3,leaf egg,,,,,,,,,,,NFS,200,NA,Collecting leaf eggs,Only available during Bunny Day,0,1.1.0a,Dresses,3767,680,iJeXo3dJrybEpPEHw
   destinations signpost  ,4,hardwood,8,softwood,,,,,,,,,NFS,200,1500,Nook Miles Exchange,,0,1.0.0,Housewares,441,383,39ryJtTNCrokaosYW
-iron wand,3,iron nugget,3,star fragment,,,,,,,,,NFS,,NA,Celeste,,0,1.0.0,Tools,999,540,MYYovLTdmLov8y2hL
+iron wand,3,iron nugget,3,star fragment,,,,,,,,,NFS,200,NA,Celeste,,0,1.0.0,Tools,999,540,MYYovLTdmLov8y2hL
   TIRE TOY  ,1,old tire,,,,,,,,,,,NFS,200,NA,Fishing up an old tire,,0,1.0.0,Housewares,601,78,2bNpWkbwsHyXGCGb5
 tree's bounty mobile,2,pine cone,3,acorn,3,tree branch,,,,,,,NFS,200,NA,Balloons,Only available during Fall,0,1.0.0,Wall-mounted,2930,414,F6WehkKZG7sSwRLBo
   bamboo-grove wall  ,7,young spring bamboo,3,bamboo shoot,,,,,,,,,NFS,200,NA,Balloons,Only available during Spring,0,1.0.0,Wallpaper,2551,300,YEqTcFmBecj7pp4XX
   water-egg shoes  ,2,water egg,,,,,,,,,,,NFS,200,NA,Collecting water eggs,Only available during Bunny Day,0,1.1.0a,Shoes,3777,690,Bg9geKwGApyACyXEx
 log bed,30,hardwood,,,,,,,,,,,NFS,200,NA,Tom Nook; Peppy villagers,Obtained during the main storyline during the villager house development quest,0,1.0.0,Housewares,338,119,kCWnjzgmGXnkRY4Ww
 garden rock,15,stone,,,,,,,,,,,NFS,200,NA,Lazy villagers,,0,1.0.0,Housewares,805,48,gH69947Ybie3us6SB
-  slingshot  ,5,hardwood,,,,,,,,,,,300,,NA,Nook's Cranny,,0,1.0.0,Tools,111,29,Bbew7NAtvtH9wLJrD
+  slingshot  ,5,hardwood,,,,,,,,,,,300,200,NA,Nook's Cranny,,0,1.0.0,Tools,111,29,Bbew7NAtvtH9wLJrD
   dark wooden-mosaic wall  ,15,wood,,,,,,,,,,,NFS,200,NA,Big Sister villagers,,0,1.0.0,Wallpaper,522,311,sEZQCkucygfgPphNu
 wooden-block wall clock,1,wooden-block toy,2,softwood,1,iron nugget,,,,,,,NFS,200,NA,Peppy villagers,,50,1.0.0,Wall-mounted,359,90,g9N9eFwC48vsPWz5e
 TROPICAL VISTA,5,summer shell,,,,,,,,,,,,200,NA,Balloons,Only available during Summer,0,1.0.0,Wallpaper,2850,666,5mypRC2jBZnq6ywTT
@@ -362,8 +362,8 @@ CHERRY UMBRELLA,7,cherry,,,,,,,,,,,NFS,200,NA,Peppy villagers,,100,1.0.0,Umbrell
 HYACINTH CROWN,4,red hyacinths,2,yellow hyacinths,2,white hyacinths,,,,,,,NFS,200,NA,All Villagers,,0,1.0.0,Headwear,3620,237,wChSX5vstYGQaWma7
   wooden-block chest  ,1,wooden-block toy,12,softwood,,,,,,,,,NFS,200,NA,Normal villagers,,0,1.0.0,Housewares,355,24,9cAfAFEhqMFHTefLC
   cherry wall  ,20,cherry,,,,,,,,,,,NFS,200,NA,Peppy villagers,,100,1.0.0,Wallpaper,1450,307,c4EyTmXti6TusMbGF
-  magazine rack  ,2,magazine,4,wood,,,,,,,,,NFS,,NA,Peppy villagers,,100,1.0.0,Miscellaneous,2110,413,8xG78nXxXkRwPuhqX
-  jail bars  ,5,iron nugget,,,,,,,,,,,NFS,,NA,Cranky villagers,,0,1.0.0,Housewares,912,435,cQRevEHviBPSXaDRz
+  magazine rack  ,2,magazine,4,wood,,,,,,,,,NFS,200,NA,Peppy villagers,,100,1.0.0,Miscellaneous,2110,413,8xG78nXxXkRwPuhqX
+  jail bars  ,5,iron nugget,,,,,,,,,,,NFS,200,NA,Cranky villagers,,0,1.0.0,Housewares,912,435,cQRevEHviBPSXaDRz
   leaf campfire  ,3,pine cone,5,clump of weeds,3,tree branch,,,,,,,NFS,200,NA,Balloons,Only available during Fall,0,1.0.0,Housewares,2903,509,ziEwyR6mTntmTaKfX
 stacked magazines,6,magazine,,,,,,,,,,,NFS,200,NA,Peppy villagers,,100,1.0.0,Miscellaneous,2111,197,3gMLM9p6vJS37zTZe
 cool hyacinth wreath,3,orange hyacinths,3,blue hyacinths,3,pink hyacinths,,,,,,,NFS,200,NA,All Villagers,,100,1.0.0,Wall-mounted,3561,453,HaC5frhoXCDpy5YYj

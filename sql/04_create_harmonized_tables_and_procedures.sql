@@ -7,12 +7,30 @@
 --
 -- Deduplication: raw accumulates every ingested batch (the same item can
 -- appear more than once across batches, sometimes with dirtier data than
--- before). DISTINCT ON (unique_entry_id) ORDER BY unique_entry_id,
--- loaded_at DESC always keeps the most recently loaded version of each
--- item, which is also the version the transformation cleans.
+-- before). DISTINCT ON (unique_entry_id) keeps one version per item: for
+-- tables with prices, a version whose price survived beats one that was
+-- blanked out; otherwise (and among equally complete versions) the most
+-- recently loaded version wins.
 --
 -- source_file is carried into harmonized so a row's origin stays
 -- traceable after transformation.
+-- ============================================================
+-- Title case helper
+-- ============================================================
+-- INITCAP treats an apostrophe as a word break, so "queen alexandra's
+-- birdwing" becomes "Queen Alexandra'S Birdwing". This wrapper lowercases
+-- a possessive 'S at the end of a word, while names like "O'Hare" (letter
+-- after the apostrophe is not the end of the word) keep their capital.
+-- Hyphenated names keep INITCAP's "Soft-Shelled Turtle" style on purpose.
+
+CREATE OR REPLACE FUNCTION automation.fn_title_case(value TEXT)
+RETURNS TEXT
+LANGUAGE sql
+IMMUTABLE
+AS $$
+    SELECT regexp_replace(INITCAP(value), '''S\M', '''s', 'g');
+$$;
+
 -- ============================================================
 -- Fish
 -- ============================================================
@@ -112,7 +130,7 @@ BEGIN
     SELECT DISTINCT ON (unique_entry_id)
         unique_entry_id,
         internal_id,
-        INITCAP(TRIM(name)) AS name,
+        automation.fn_title_case(TRIM(name)) AS name,
         NULLIF(TRIM(sell), '')::INTEGER AS sell,
         where_how,
         shadow,
@@ -259,7 +277,7 @@ BEGIN
     SELECT DISTINCT ON (unique_entry_id)
         unique_entry_id,
         internal_id,
-        INITCAP(TRIM(name)) AS name,
+        automation.fn_title_case(TRIM(name)) AS name,
         NULLIF(TRIM(sell), '')::INTEGER AS sell,
         where_how,
         weather,
@@ -353,7 +371,7 @@ BEGIN
     SELECT DISTINCT ON (unique_entry_id)
         unique_entry_id,
         internal_id,
-        INITCAP(TRIM(name)) AS name,
+        automation.fn_title_case(TRIM(name)) AS name,
         -- "NFS" (Not For Sale) and blank cells both become NULL.
         NULLIF(NULLIF(TRIM(buy), ''), 'NFS')::INTEGER AS buy,
         NULLIF(TRIM(sell), '')::INTEGER AS sell,
@@ -440,11 +458,11 @@ BEGIN
     )
     SELECT DISTINCT ON (unique_entry_id)
         unique_entry_id,
-        INITCAP(TRIM(name)) AS name,
-        INITCAP(TRIM(species)) AS species,
-        INITCAP(TRIM(gender)) AS gender,
-        INITCAP(TRIM(personality)) AS personality,
-        INITCAP(TRIM(hobby)) AS hobby,
+        automation.fn_title_case(TRIM(name)) AS name,
+        automation.fn_title_case(TRIM(species)) AS species,
+        automation.fn_title_case(TRIM(gender)) AS gender,
+        automation.fn_title_case(TRIM(personality)) AS personality,
+        automation.fn_title_case(TRIM(hobby)) AS hobby,
         birthday,
         -- Birthday is "D-Mon" (e.g. "27-Jan"). A dummy leap year (2000) is
         -- appended only so TO_DATE can parse the day/month; the year itself
@@ -530,7 +548,12 @@ BEGIN
         FROM raw.housewares
         WHERE unique_entry_id IS NOT NULL
           AND internal_id IS NOT NULL
-        ORDER BY unique_entry_id, loaded_at DESC
+        -- Same tie-break as the other priced tables: prefer a batch where
+        -- Sell (and a real Buy) survived over a later batch that blanked it.
+        ORDER BY unique_entry_id,
+                 (NULLIF(TRIM(sell), '') IS NULL),
+                 (NULLIF(NULLIF(TRIM(buy), ''), 'NFS') IS NULL),
+                 loaded_at DESC
     ),
     item_dedup AS (
         SELECT DISTINCT ON (internal_id) *
@@ -569,7 +592,7 @@ BEGIN
     SELECT
         unique_entry_id,
         internal_id,
-        INITCAP(TRIM(name)) AS name,
+        automation.fn_title_case(TRIM(name)) AS name,
         variation,
         CASE WHEN LOWER(TRIM(diy)) = 'yes' THEN TRUE WHEN LOWER(TRIM(diy)) = 'no' THEN FALSE END AS diy,
         CASE WHEN LOWER(TRIM(body_customize)) = 'yes' THEN TRUE WHEN LOWER(TRIM(body_customize)) = 'no' THEN FALSE END AS body_customize,
@@ -655,7 +678,7 @@ BEGIN
     SELECT DISTINCT ON (unique_entry_id)
         unique_entry_id,
         internal_id,
-        INITCAP(TRIM(name)) AS name,
+        automation.fn_title_case(TRIM(name)) AS name,
         NULLIF(TRIM(qty_1), '')::INTEGER, NULLIF(TRIM(material_1), ''),
         NULLIF(TRIM(qty_2), '')::INTEGER, NULLIF(TRIM(material_2), ''),
         NULLIF(TRIM(qty_3), '')::INTEGER, NULLIF(TRIM(material_3), ''),

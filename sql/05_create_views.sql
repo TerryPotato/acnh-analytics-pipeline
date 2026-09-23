@@ -36,6 +36,9 @@ FROM harmonized.creatures_availability;
 -- ============================================================
 -- Total potential Bells and species count per hemisphere/month/creature
 -- type. Powers the 12-month stacked bar chart (fish vs. insects).
+-- A species whose Sell is NULL (price lost in every batch) still counts as
+-- available but adds nothing to total_bells; unpriced_count exposes how
+-- many there are so the dashboard can say the total is incomplete.
 
 CREATE OR REPLACE VIEW analytics.v_monthly_bell_potential AS
 SELECT
@@ -43,7 +46,8 @@ SELECT
     month,
     creature_type,
     COUNT(*) AS species_count,
-    SUM(sell) AS total_bells
+    COALESCE(SUM(sell), 0) AS total_bells,
+    COUNT(*) FILTER (WHERE sell IS NULL) AS unpriced_count
 FROM harmonized.creatures_availability
 GROUP BY hemisphere, month, creature_type
 ORDER BY hemisphere, month, creature_type;
