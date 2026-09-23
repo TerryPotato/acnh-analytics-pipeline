@@ -24,9 +24,11 @@ SELECT
     -- NULLS LAST because Sell can be NULL for a species with dirty/missing
     -- price data; those should rank last, not tie for first place (which
     -- is what Postgres's default NULLS FIRST for DESC would otherwise do).
-    RANK() OVER (
+    -- ROW_NUMBER (not RANK) with name as tie-break so "rank <= 10" is always
+    -- exactly 10 rows in a reproducible order, even with price ties.
+    ROW_NUMBER() OVER (
         PARTITION BY hemisphere, month
-        ORDER BY sell DESC NULLS LAST
+        ORDER BY sell DESC NULLS LAST, name ASC
     ) AS rank
 FROM harmonized.creatures_availability;
 

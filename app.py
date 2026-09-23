@@ -611,7 +611,8 @@ with st.container(border=True):
     if top_creatures_df.empty:
         st.info("No fish or insects are available this month/hemisphere.")
     else:
-        chart_df = top_creatures_df.sort_values("sell", ascending=True, na_position="first")
+        # Plotly draws the first row at the bottom, so reverse the rank to put #1 on top.
+        chart_df = top_creatures_df.sort_values("rank", ascending=False)
         fig = px.bar(
             chart_df,
             x="sell",
@@ -620,11 +621,24 @@ with st.container(border=True):
             color_discrete_map=CREATURE_COLORS,
             orientation="h",
             text="sell",
+            custom_data=["time_window"],
             labels={"sell": "Sell price (Bells)", "name": "", "creature_type": "Type"},
-            hover_data={"time_window": True, "sell": ":,", "creature_type": False},
         )
-        fig.update_traces(texttemplate="%{text:,}", textposition="outside", marker_line_width=0)
+        fig.update_traces(
+            texttemplate="%{text:,}",
+            textposition="outside",
+            cliponaxis=False,
+            marker_line_width=0,
+            hovertemplate=(
+                "<b>%{y}</b><br>Type: %{fullData.name}<br>"
+                "Sell price: %{x:,} Bells<br>Time: %{customdata[0]}<extra></extra>"
+            ),
+        )
         fig.for_each_trace(lambda t: t.update(name=CREATURE_LABELS.get(t.name, t.name)))
+        # Headroom past the longest bar so its outside label ("15,000") is not cut off.
+        fig.update_xaxes(range=[0, chart_df["sell"].fillna(0).max() * 1.15])
+        # Keep the rank order (ties included) instead of Plotly's category sorting.
+        fig.update_yaxes(categoryorder="array", categoryarray=chart_df["name"].tolist())
         fig.update_layout(
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
