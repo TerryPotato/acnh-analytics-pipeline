@@ -85,6 +85,30 @@ acnh-analytics-pipeline/
    streamlit run app.py
    ```
 
+## Docker
+
+Build and start the Linux containers (dashboard and PostgreSQL):
+
+```bash
+docker compose up --build -d
+```
+
+Open the dashboard at <http://localhost:8501>. PostgreSQL initializes the schemas,
+tables, procedures, and views automatically the first time its volume is created.
+If port 8501 is occupied, set `DASHBOARD_PORT` before starting Compose.
+
+To ingest CSV files placed under `data/raw/<source>/`, run the one-shot pipeline:
+
+```bash
+docker compose --profile tools run --rm pipeline
+```
+
+Stop the containers without deleting the database:
+
+```bash
+docker compose down
+```
+
 ## Credits
 
 Dataset: ACNH community spreadsheet (Kaggle, June 2021). Item and villager artwork

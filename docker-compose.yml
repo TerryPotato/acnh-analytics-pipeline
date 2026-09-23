@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-acnh_analytics}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/00_create_schemas.sql:/docker-entrypoint-initdb.d/00_create_schemas.sql:ro
+      - ./sql/02_create_raw_tables.sql:/docker-entrypoint-initdb.d/02_create_raw_tables.sql:ro
+      - ./sql/03_create_automation_tables.sql:/docker-entrypoint-initdb.d/03_create_automation_tables.sql:ro
+      - ./sql/04_create_harmonized_tables_and_procedures.sql:/docker-entrypoint-initdb.d/04_create_harmonized_tables_and_procedures.sql:ro
+      - ./sql/05_create_views.sql:/docker-entrypoint-initdb.d/05_create_views.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  dashboard:
+    build:
+      context: .
+    image: acnh-analytics-pipeline:latest
+    restart: unless-stopped
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-acnh_analytics}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+    ports:
+      - "${DASHBOARD_PORT:-8501}:8501"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  pipeline:
+    image: acnh-analytics-pipeline:latest
+    profiles: ["tools"]
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-acnh_analytics}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+    volumes:
+      - ./data:/app/data
+    command: ["python", "src/pipeline.py"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

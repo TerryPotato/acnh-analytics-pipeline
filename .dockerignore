@@ -1,0 +1,10 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.py[cod]
+*.log
+.env
+.streamlit/secrets.toml
+.ipynb_checkpoints
+archive
