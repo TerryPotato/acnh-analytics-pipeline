@@ -16,6 +16,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 from pipeline import run_pipeline
+from ingest_files import loose_csv_message
 
 
 # ============================================================
@@ -66,6 +67,9 @@ class NewCSVFileHandler(FileSystemEventHandler):
 
         logger.info("New CSV file detected: %s", file_path)
 
+        if self.is_loose_csv(file_path):
+            return
+
         # Give Windows time to finish copying the file.
         time.sleep(2)
 
@@ -90,10 +94,26 @@ class NewCSVFileHandler(FileSystemEventHandler):
 
         logger.info("CSV file moved into folder: %s", file_path)
 
+        if self.is_loose_csv(file_path):
+            return
+
         # Give Windows time to finish moving the file.
         time.sleep(2)
 
         self.run_pipeline_safely()
+
+    def is_loose_csv(self, file_path: Path) -> bool:
+        """
+        Warn and return True when a CSV lands directly in data/raw/
+        instead of inside a source subfolder. The ingestion only reads the
+        subfolders, so running the pipeline for it would do nothing.
+        """
+
+        if file_path.parent != RAW_DATA_DIR:
+            return False
+
+        logger.warning(loose_csv_message(file_path))
+        return True
 
     def run_pipeline_safely(self):
         """

@@ -123,7 +123,7 @@ def normalize_column_name(header: str) -> str:
     Convert a raw CSV header into the snake_case column name used by the
     raw tables in sql/02_create_raw_tables.sql.
 
-    Special cases (see CLAUDE.md section 8):
+    Special cases (see the Data Dictionary section of README.md):
         "#"   -> "row_number"
         "#1"  -> "qty_1"   (recipes.csv material quantity columns)
         "#6"  -> "qty_6"
@@ -206,6 +206,44 @@ def get_csv_files(folder_path: Path) -> list[Path]:
     # Find all files ending in .csv inside the folder.
     # sorted() makes the loading order predictable.
     return sorted(folder_path.glob("*.csv"))
+
+
+def loose_csv_message(file_path: Path) -> str:
+    """
+    Build the warning for a CSV dropped directly in data/raw/ instead of
+    inside its source subfolder. Those files are never ingested, because
+    each source only reads its own folder (see SOURCES).
+
+    The target folder is guessed from the file name without its batch
+    number, e.g. fish02.csv -> data/raw/fish/.
+
+    Parameters:
+        file_path: Path of the loose CSV file.
+
+    Returns:
+        A log message naming the file and where it should be moved.
+    """
+
+    relative_file_path = get_relative_path(file_path)
+    source_name = re.sub(r"\d+$", "", file_path.stem).lower()
+
+    if source_name in SOURCES:
+        target_folder = get_relative_path(SOURCES[source_name]["folder"])
+        return (
+            f"Loose CSV ignored: {relative_file_path}. "
+            f"Move it to {target_folder} to ingest it."
+        )
+
+    return (
+        f"Loose CSV ignored: {relative_file_path}. "
+        f"Move it into one of the source folders: {', '.join(SOURCES)}."
+    )
+
+
+def warn_about_loose_csv_files() -> None:
+    """Log a warning for every CSV sitting directly in data/raw/."""
+    for file_path in sorted(RAW_DATA_DIR.glob("*.csv")):
+        logger.warning(loose_csv_message(file_path))
 
 
 def file_was_processed(file_path: Path) -> bool:
@@ -461,6 +499,9 @@ def ingest_new_files() -> None:
     """
 
     logger.info("Starting ingestion process...")
+
+    # CSVs left directly in data/raw/ are not picked up by any source.
+    warn_about_loose_csv_files()
 
     # Loop through every configured source:
     # fish, insects, fossils, villagers, housewares, recipes.
